@@ -11,7 +11,6 @@ function Detail() {
 
   useEffect(() => {
     const temp = getOneHackthonData(parseInt(id));
-    console.log(temp);
     setItem(temp);
   }, []);
 

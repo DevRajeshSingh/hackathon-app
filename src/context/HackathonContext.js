@@ -5,7 +5,7 @@ export const useHackthon = () => useContext(HackthonContext);
 
 const HackthonProvider = ({ children }) => {
   const [hackthonList, setHackthonList] = useState([]);
-
+  
   useEffect(() => {
     getHackthonData();
   }, []);

@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  outline-color: #44924c;
 }
 body {
   background-color: #f5f5f5;
@@ -126,6 +127,34 @@ a {
   height: 300px;
 }
 
+@media (max-width: 480px) {
+  .hero {
+    background-image: none;
+  }
+  .hero-content {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-heading {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .hero-para {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .hero-button {
+    margin-top: 20px;
+  }
+  .bulb {
+    display: none;
+  }
+}
+
 /* List container */
 .list-container {
   display: flex;
@@ -217,6 +246,25 @@ a {
   background-color: #e3f2e5;
 }
 
+@media (max-width: 480px) {
+  .list-container {
+    padding: 20px 20px;
+  }
+  .list-container__header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .list-container__header__left {
+    align-items: center;
+  }
+  .list-container__header__right {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sort_menu {
+    top: 100%;
+  }
+}
 /*search bar*/
 
 .search-container {
@@ -282,10 +330,14 @@ a {
   gap: 20px;
   padding: 40px 20px;
 }
+
+.card_link {
+  text-decoration: none;
+}
 .card_item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   padding: 40px 20px;
@@ -342,6 +394,22 @@ a {
   line-height: 17px;
   color: #666666;
   text-align: right;
+}
+
+@media (max-width: 720px) {
+  .list-container__body {
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .list-container__body {
+    padding: 20px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_link {
+    margin-inline: auto;
+  }
 }
 
 /*************** Detail Page ****************/
@@ -413,6 +481,34 @@ a {
   border: 1px solid #333333;
 }
 
+@media (max-width: 480px) {
+  .delete_popup {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .delete_popup_container {
+    width: 90%;
+    min-height: 196px;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+  .delete_popup_container h2 {
+    font-size: 18px;
+  }
+  .delete_popup_container p {
+    font-size: 12px;
+  }
+  .delete_popup_container .delete_popup_buttons {
+    gap: 10px;
+  }
+  .delete_popup_container .delete_popup_buttons button {
+    width: 100%;
+    height: 40px;
+    padding: 8px 10px;
+    gap: 5px;
+  }
+}
 /*Detail Hero*/
 .detail_hero_container {
   display: flex;
@@ -521,6 +617,54 @@ a {
   margin-left: 25px;
 }
 
+@media (max-width: 480px) {
+  .detail_hero_container {
+    padding: 20px 10px;
+    gap: 20px;
+    overflow: hidden;
+  }
+  .detail_hero_top {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .detail_hero_top_left,
+  .detail_hero_top_right {
+    width: 100%;
+    padding: 20px;
+  }
+  .detail_hero_top_left h1 {
+    flex-grow: 1;
+    text-align: start;
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .detail_hero_top_right {
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  .detail_hero_top_right .d_button {
+    padding: 6px 10px;
+    gap: 5px;
+  }
+  .detail_hero_middle {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .detail_hero_bottom {
+    gap: 10px;
+  }
+  .detail_hero_bottom button {
+    padding-right: 10px;
+  }
+  .detail_hero_bottom p {
+    padding: 10px 10px;
+    margin-left: 10px;
+  }
+}
+
 /*Detailed content */
 .detail_content {
   display: flex;
@@ -606,6 +750,20 @@ a {
   align-items: center;
   gap: 12px;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .detail_content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+  .detail_content_left {
+    width: 100%;
+  }
+  .detail_content_right {
+    width: 100%;
+  }
 }
 
 /****Uploadd -- Edit -- Form ****/
@@ -763,4 +921,17 @@ a {
   font-size: 16px;
   line-height: 19px;
   color: #333333;
+}
+
+@media (max-width: 480px) {
+  .form_container {
+    padding: 15px 24px;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .from_date_container {
+    flex-direction: column;
+  }
 }

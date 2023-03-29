@@ -3,12 +3,15 @@ import { useHackthon } from "../context/HackathonContext";
 import Card from "./Card";
 function ListContainer() {
   const { hackthonList } = useHackthon();
-  const [showList, setShowList] = useState(hackthonList);
+  const [showList, setShowList] = useState([]);
   const [typeShow, setTypeShow] = useState("all");
-  const [sort, setSort] = useState("Newest");
+  const [sort, setSort] = useState("Sort");
   const [search, setSearch] = useState("");
   const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    setShowList(hackthonList);
+  }, [hackthonList]);
   useEffect(() => {
     if (typeShow === "fav") {
       setShowList(hackthonList.filter((item) => item.favourite));

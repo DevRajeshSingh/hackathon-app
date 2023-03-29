@@ -50,6 +50,7 @@ function DeletePopUpBox({ id, removeHackthon, setDeletePopUpVisible }) {
 
 function DetailHero({ item, getItemDate }) {
   const { removeHackthon, addTOFavourite, getHackthonData } = useHackthon();
+  const [isFavourite , setIsFavourite] = useState(item.favourite)
   const [deletePopUpVisible, setDeletePopUpVisible] = useState(false);
   return (
     <div className="detail_Hero">
@@ -86,10 +87,11 @@ function DetailHero({ item, getItemDate }) {
           <button
             onClick={() => {
               addTOFavourite(item.id);
+              setIsFavourite(!isFavourite)
               getHackthonData();
             }}
           >
-            {item.favourite
+            {isFavourite
               ? React.createElement(StarfillIcon)
               : React.createElement(StarIcon)}
           </button>
