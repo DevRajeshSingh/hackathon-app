@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { useHackthon } from "../context/HackathonContext";
 import { useNavigate } from "react-router-dom";
 
-export default function Form({
-  hackathonItem,
-  setHackathonItem,
-  isUpload,
-}) {
+export default function Form({ hackathonItem, setHackathonItem, isUpload }) {
   const [imageName, setImageName] = useState("");
   const { editHackthon, createHackthon } = useHackthon();
   const navigate = useNavigate();
@@ -34,6 +30,10 @@ export default function Form({
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(hackathonItem);
+    if (hackathonItem.start_date > hackathonItem.end_date) {
+      window.alert("Start date cannot be greater than end date");
+      return;
+    }
     if (isUpload) {
       createHackthon(hackathonItem);
       window.alert("Your submission has been successfully uploaded!");
@@ -146,7 +146,7 @@ export default function Form({
       <div className="flex-column">
         <label htmlFor="github_repository_link">Github Repository</label>
         <input
-          type="text"
+          type="url"
           id="github_repository_link"
           required={true}
           name="github_repository_link"
@@ -158,7 +158,7 @@ export default function Form({
       <div className="flex-column">
         <label htmlFor="other_links">Other Links </label>
         <input
-          type="text"
+          type="url"
           id="other_links"
           name="other_links"
           placeholder="You can upload a video demo or URL of you demo app here."

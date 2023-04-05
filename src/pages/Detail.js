@@ -31,7 +31,7 @@ function Detail() {
     ];
 
     const date =
-      new Date(temp_date).getDay() +
+      new Date(temp_date).getDate() +
       " " +
       month[new Date(temp_date).getMonth()] +
       " " +

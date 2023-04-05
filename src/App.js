@@ -8,6 +8,7 @@ import { Navbar } from "./components/Navbar";
 import Edit from "./pages/Edit";
 
 function App() {
+
   return (
     <HackthonProvider>
       <div className="App">

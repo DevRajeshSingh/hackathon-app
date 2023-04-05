@@ -4,6 +4,7 @@ import Form from "../components/Form";
 import { useHackthon } from "../context/HackathonContext";
 
 const Edit = () => {
+
   const [hackathonItem, setHackathonItem] = useState(null);
   const { getOneHackthonData } = useHackthon();
   const { id } = useParams();
@@ -11,6 +12,7 @@ const Edit = () => {
     const temp = getOneHackthonData(parseInt(id));
     setHackathonItem(temp);
   }, [id]);
+
   return (
     <>
       {hackathonItem ? (

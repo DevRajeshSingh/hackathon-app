@@ -26,14 +26,12 @@ const DetailContent = ({ item, getItemDate }) => {
               <span>{React.createElement(GithubIcon)}</span>
               <span> Github Repository</span>
             </a>
-            <a
-              href={item.github_repository_link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>{React.createElement(OpenLinkIcon)}</span>
-              <span> Other Link</span>
-            </a>
+            {item.other_links !== "" && (
+              <a href={item.other_links} target="_blank" rel="noreferrer">
+                <span>{React.createElement(OpenLinkIcon)}</span>
+                <span> Other Link</span>
+              </a>
+            )}
           </div>
         </div>
       </div>
